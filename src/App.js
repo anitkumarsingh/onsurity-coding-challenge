@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import NavBar from './Components/NavBar/NavBar';
+import Footer from './Components/Footer/Footer';
+import AppRoutes from 'routes/AppRoutes';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-           hello
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const AppContainer = () => (
+  <Router>
+    <div>
+      <Route component={NavBar} />
+      <div className="App">
+        <Switch>
+          <Route path="/" component={AppRoutes} />
+        </Switch>
+      </div>
+      <Route component={Footer} />
     </div>
-  );
-}
+  </Router>
+);
+
+const App = () => (
+  <Router>
+    <Route
+      component={AppContainer}
+    />
+  </Router>
+);
 
 export default App;
