@@ -1,6 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
+import SelectCard from '../../Components/Card/Card';
 
 const styles = theme =>({
   headerTitle:{
@@ -13,15 +14,50 @@ const styles = theme =>({
     textAlign:'center',
     padding:'1em 0 3em 0'
   },
-  media:{
-    height: 990,
+  imgContainer:{
+    height: '590px',
     background:'url("/img/LadyWithPhone.png")',
     backgroundSize: 'cover',
-    backgroundPosition:'right center',
-    backgroundRepeat:'no-repeat'
+    backgroundPosition:'top right ',
+    backgroundRepeat:'no-repeat',
 
   },
-  constainer:{background:'white'}
+  constainer:{background:'white'},
+  media:{
+    width:'480px',
+    // height:'490px',
+    marginLeft:'30px',
+    top:'50%'
+  },
+  flexContainer:{
+    display: 'flex',
+    alignItems: 'stretch',
+    // fontSize:'22px',
+    '&&>div':{
+      color: 'white',
+      width: '100px',
+      margin: '10px',
+    }
+  },
+  selectCard:{
+   position:'relative',
+   marginTop:'40%',
+  },
+  // flexiContain:{
+  //   display: 'flex',
+  //   alignItems: 'stretch',
+  //   backgroundColor: '#f1f1f1',
+
+  //   '&&>div':{
+  //     backgroundColor: 'DodgerBlue',
+  //     color: 'white',
+  //     width: '100px',
+  //     margin: '10px',
+  //     textAlign: 'center',
+  //     lineHeight: '75px',
+  //     fontSize: '30px'
+  //   }
+  // }
 })
 
 const Home = ({classes}) =>{
@@ -33,9 +69,20 @@ const Home = ({classes}) =>{
       <Typography component="h6" variant="h6" className={classes.subTitle}>
        Simple. Smart. Affordable
       </Typography>
-      <div className={classes.media}>
-
+      {/* <div className={classes.imgContainer}>
+        <div className={classes.media}>
+             <SelectCard/>
+        </div>
+      </div> */}
+      <div className={classes.flexContainer}>
+      <div style={{flexGrow:'5'}} className={classes.selectCard}> <SelectCard/></div>
+      <div style={{flexGrow:'8'}} className={classes.imgContainer}></div>
       </div>
+      {/* <div className={classes.flexiContain}>
+         <div style={{flexGrow:'4'}}>1</div>
+         <div style={{flexGrow:'4'}}>2</div>
+         <div style={{flexGrow:'4'}}>3</div>
+      </div> */}
     </div>
   )
 }
