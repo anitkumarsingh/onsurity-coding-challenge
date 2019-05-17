@@ -16,7 +16,8 @@ const year = date.getFullYear();
 
 const styles = theme => ({
   innerContainer: {
-    maxWidth: 500,
+    // maxWidth: 500,
+    width:'100%'
   },
   darkBg: {
     backgroundColor: theme.palette.secondary.main,
@@ -26,8 +27,8 @@ const styles = theme => ({
     backgroundColor: theme.palette.ternary.main,
   },
   footerImage:{
-    position:'absolute',
-    left:0
+    // position:'relative',
+    // left:'5%'
   },
   developerText:{
    textAlign:'center'
@@ -35,8 +36,21 @@ const styles = theme => ({
   copyRight:{
     color:'white',
     position:'relative',
-    left:'-120px',
-    bottom:'-180px'
+    // left:'-120px',
+     bottom:'-90px',
+     [theme.breakpoints.between('xs', 'xs')]: {
+      bottom:'0px',
+      textAlign:'center'
+    }
+  },
+  hideOnSmallDevice:{
+    [theme.breakpoints.between('xs', 'xs')]: {
+      display: 'inline-table',
+    },
+  },
+  contactOnSmallDevice :{
+    flexGrow:0,
+
   }
 });
 
@@ -92,7 +106,7 @@ const GetInTouch = ({ className }) => (
           fontSize="small"
         />
         <ItemText>
-          <a href="tel:+919380666054">+1 234 234 2346</a>
+          <a href="tel:+1 234 234 2346">+1 234 234 2346</a>
         </ItemText>
       </div>
     </address>
@@ -145,7 +159,7 @@ const NavigationItems = ({ className }) => (
 
 const brandListItems = [
   {
-    name: 'Brand Terms of User',
+    name: 'Brand Terms of Use',
     link: links.staticLink('brand-terms'),
   },
   {
@@ -168,7 +182,7 @@ const brandListItems = [
 
 const BrandColumn = ({ className }) => (
   <div className={className}>
-    {/* <Title>Contributor</Title> */}<br/>
+    <br/>
     <List component="nav" dense>
       {brandListItems.map((item2, index) => {
         return (
@@ -187,12 +201,36 @@ const DeveloperMark = ({ classes }) => (
   >
     <div className="sm-order-3 flex-grow" />
     <Typography
+      className={classNames('text-light basis-100', 'sm-basis-auto sm-order-4')}
+      align="center"
+      variant="body2"
+    >
+     Coded By Anit Kumar
+    </Typography>
+  </div>
+);
+
+const Legal = ({ classes }) => (
+  <div
+    className={classNames('flex flex-wrap px-6 py-2 sm-py-4')}
+  >
+    <div className="sm-order-3 flex-grow" />
+    <Typography
       className={classNames('text-light basis-100', 'sm-basis-auto sm-order-1')}
       align="center"
       variant="body2"
-
     >
-     Coded By Anit Kumar
+      &copy; Onsurity
+    </Typography>
+    <Typography
+      className={classNames(
+        'text-light basis-100 mx-2',
+        'sm-basis-auto sm-order-2'
+      )}
+      align="center"
+      variant="body2"
+    >
+      All Rights Reserved.{year}
     </Typography>
   </div>
 );
@@ -200,33 +238,61 @@ const DeveloperMark = ({ classes }) => (
 const Footer = ({ classes }) => {
   return (
     <footer>
-      <Grid container spacing={24} className={classNames(
-          'flex justify-center px-8 pt-4',
-          // 'sm-px-6 sm-pt-6 sm-pb-3',
-          classes.darkBg)}>
-        <Grid item xs={3}>
+       <div
+        className={classNames(
+          'flex justify-center px-4 pt-4',
+          'sm-px-6 sm-pt-6 sm-pb-3',
+          classes.darkBg
+        )}
+      >
+        <div
+          className={classNames(
+            'flex flex-wrap max-w-sm max-w-md max-w-xl',
+            classes.innerContainer
+          )}
+        >
+      <Grid container className={classNames(classes.darkBg)}>
+        <Grid item xs={5} auto="true"  className={classes.hideOnSmallDevice}>
+        <div className={classes.hideOnSmallDevice}>
+        <Link to={links.home()}>
         <img
           src="/icons/footerlogo.png"
           alt="Onsurity"
-          width={250}
+          width={'auto'}
           height={'auto'}
-          // onClick={this.handleChange}
-          className={classes.footerImage}
+          className={classNames('mb-4 basis-100 order-1',
+          'sm-basis-auto sm-order-1',
+          'md-basis-20',classes.footerImage)}
           />
-          <Typography className={classes.copyRight}>
-            &copy; Onsurity All Rights Reserved, {year}
-          </Typography>
+          </Link>
+          <Legal/>
+          </div>
         </Grid>
-        <Grid item xs={2}>
-         <NavigationItems/>
+        <div className="md-order-7 md-basis-60" />
+        <Grid item xs auto="true" >
+         <NavigationItems  className={classNames(
+              'mb-4 basis-50 order-3',
+              'sm-basis-33 sm-order-1',
+              'md-basis-20'
+            )}/>
         </Grid>
-        <Grid item xs={2}>
-          <BrandColumn/>
+        <Grid item xs auto="true" >
+          <BrandColumn  className={classNames(
+              'mb-4 basis-100 order-4',
+              'sm-basis-100 sm-order-2',
+              'md-basis-20'
+            )}/>
         </Grid>
-        <Grid item xs={2}>
-          <GetInTouch/>
+        <Grid item xs auto="true">
+          <GetInTouch  className={classNames(
+              'mb-4 basis-100 order-1',
+              'sm-basis-33 sm-order-4',
+              'md-basis-20'
+            )}/>
         </Grid>
       </Grid>
+      </div>
+      </div>
       <DeveloperMark classes={classes} />
     </footer>
   );

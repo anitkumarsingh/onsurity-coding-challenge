@@ -140,7 +140,6 @@ class NavBar extends React.Component {
                 alt="Onsurity"
                 width={110}
                 height={'auto'}
-                // onClick={this.handleChange}
                 />
               </Link>
             <div className={classes.grow} />
