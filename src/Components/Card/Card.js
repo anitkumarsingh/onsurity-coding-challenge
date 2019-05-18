@@ -16,7 +16,12 @@ const styles = theme=>({
     top:'3%',
     left:'30px',
     height:330,
-    paddingTop:'20px'
+    paddingTop:'20px',
+    [theme.breakpoints.down('sm')]: {
+      left:'20px',
+      marginLeft:'auto',
+      marginRight:'auto',
+    },
   },
   title: {
     fontSize: 14,
@@ -26,10 +31,11 @@ const styles = theme=>({
   },
   button: {
     margin: theme.spacing.unit,
-    backgroundColor:'#f04336',
-    boxShadow: '12px 12px 12px 12px rgba(225, 0, 0, 0.1)',
+    // backgroundColor:'#f04336',
+    boxShadow: '12px 2px 22px 12px rgba(225, 0, 0, 0.1)',
     padding:'10px 30px 10px 30px',
-    fontSize:'1em'
+    fontSize:'1em',
+    backgroundImage: 'linear-gradient(to right top, #f04336, #f04336, #f04336, #f04336, #f04336)'
   },
   // ctaBtn:{
   //   display: 'flex',

@@ -11,7 +11,7 @@ const styles = theme =>({
   headerTitle:{
     fontSize:'3em',
     textAlign:'center',
-    padding:'1.2em 0 0.4em 0'
+    padding:'2.2em 0 0.4em 0',
   },
   subTitle:{
     fontSize:'1em',
@@ -67,9 +67,10 @@ const styles = theme =>({
   button: {
     margin: theme.spacing.unit,
     backgroundColor:'#f04336',
-    boxShadow: '12px 12px 12px 12px rgba(225, 0, 0, 0.1)',
+    boxShadow: '12px 2px 22px 12px rgba(225, 0, 0, 0.1)',
     padding:'10px 30px 10px 30px',
-    fontSize:'1em'
+    fontSize:'1em',
+    backgroundImage: 'linear-gradient(to right top, #f04336, #f04336, #f04336, #f04336, #f04336)'
   },
   row:{
     display:'flex',
@@ -92,11 +93,17 @@ const styles = theme =>({
   },
   tellUsDeviceText:{
     marginTop:'260px',
-    textAlign:'center'
+    textAlign:'center',
+    [theme.breakpoints.down('sm')]: {
+      marginTop:'60px',
+    },
   },
   personalizedTxtBox:{
     marginTop:'233px',
-    textAlign:'center'
+    textAlign:'center',
+    [theme.breakpoints.down('sm')]: {
+      marginTop:'40px',
+    },
   },
   payNgetInsuredTxt:{
     bottom:0,
@@ -131,6 +138,9 @@ const styles = theme =>({
     [theme.breakpoints.down('sm')]: {
       visibility: 'hidden',
     },
+  },
+  headerContainer:{
+   padding:'0 10px 0 10px'
   }
 
 })
@@ -138,21 +148,27 @@ const styles = theme =>({
 const Home = ({classes}) =>{
   return(
     <div className={classes.constainer}>
-      <Typography component="h1" variant="h4" className={classes.headerTitle}>
-       Insurance that Works for You
-      </Typography>
-      <Typography component="h6" variant="h6" className={classes.subTitle}>
-       Simple. Smart. Affordable
-      </Typography>
+      <div className={classes.headerContainer}>
+        <Typography component="h1" variant="h4" className={classes.headerTitle}>
+          Insurance that Works for You
+        </Typography>
+      </div>
+      <div className={classes.headerContainer}>
+        <Typography component="h6" variant="h6" className={classes.subTitle}>
+         Simple. Smart. Affordable
+        </Typography>
+      </div>
       <div className={classes.flexContainer}>
           <div style={{flexGrow:'5'}} className={classes.selectCard}>
             <SelectCard/>
           </div>
           <div style={{flexGrow:'8'}} className={classes.imgContainer}></div>
       </div>
-      <Typography component="h1" variant="h4" className={classes.headerTitle}>
-       {`It's Easier than You Think`}
-      </Typography>
+      <div className={classes.headerContainer}>
+        <Typography component="h1" variant="h4" className={classes.headerTitle}>
+          {`It's Easier than You Think`}
+        </Typography>
+      </div>
       <div className={classes.spacer}></div>
       <div className={classes.flexiContain}>
          <div><BrandSelect/>

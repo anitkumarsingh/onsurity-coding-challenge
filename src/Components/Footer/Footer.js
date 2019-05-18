@@ -56,10 +56,10 @@ const styles = theme => ({
 
 const Title = ({ children }) => (
   <Typography
-    className="uppercase"
     color="primary"
     gutterBottom
-    variant="button"
+    variant="subtitle1"
+    component="h3"
   >
     {children}
   </Typography>
@@ -68,7 +68,8 @@ const Title = ({ children }) => (
 const ItemText = ({ children, className }) => (
   <Typography
     className={classNames(className, 'inline', 'text-light')}
-    variant="caption"
+    // variant="caption"
+    variant="subtitle2" component="p"
   >
     {children}
   </Typography>

@@ -122,7 +122,7 @@ class NavBar extends React.Component {
          return(
            <Link to={item.link} key={item.name + 'navM'}>
               <MenuItem onClick={this.handleMobileMenuClose}>
-                <Typography>{item.name}</Typography>
+                <Typography >{item.name}</Typography>
               </MenuItem>
            </Link>
          )
@@ -139,7 +139,7 @@ class NavBar extends React.Component {
                 src="/icons/logo.png"
                 alt="Onsurity"
                 width={110}
-                height={'auto'}
+                height={50}
                 />
               </Link>
             <div className={classes.grow} />
@@ -148,7 +148,7 @@ class NavBar extends React.Component {
               return(
                 <Link to={item.link} key={item.name + 'nav'}>
                     <MenuItem onClick={this.handleMobileMenuClose}>
-                      <Typography>{item.name}</Typography>
+                      <Typography variant="subtitle1" component="h5">{item.name}</Typography>
                     </MenuItem>
                 </Link>
               )
