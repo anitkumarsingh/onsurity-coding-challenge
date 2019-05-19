@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import MailIcon from '@material-ui/icons/MailOutline';
 import PhoneIcon from '@material-ui/icons/Phone';
 import { withStyles } from '@material-ui/core/styles';
-import links from '../../Utility/links';
+import links from '../../utility/links';
 import { Grid } from '@material-ui/core';
 
 const date = new Date();

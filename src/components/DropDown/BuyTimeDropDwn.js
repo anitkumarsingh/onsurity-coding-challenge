@@ -1,6 +1,7 @@
 import React from 'react';
 import chroma from 'chroma-js';
-import { modelOptions } from '../../Api/DummyData/Data';
+
+import { buyTimeOptions } from '../../api/DummyData/Data';
 import Select from 'react-select';
 
 const colourStyles = {
@@ -25,16 +26,16 @@ const colourStyles = {
       },
     };
   },
-  input: styles => ({ ...styles }),
-  placeholder: styles => ({ ...styles }),
-  singleValue: (styles, { data }) => ({ ...styles }),
+  input: styles => ({ ...styles}),
+  placeholder: styles => ({ ...styles}),
+  singleValue: (styles, { data }) => ({ ...styles}),
 };
 
 export default () => (
   <Select
-    label="Select your model"
-    options={modelOptions}
+    label="When did you buy it ?"
+    options={buyTimeOptions}
     styles={colourStyles}
-    placeholder="Select your model"
+    placeholder="When did you buy it ?"
   />
 );

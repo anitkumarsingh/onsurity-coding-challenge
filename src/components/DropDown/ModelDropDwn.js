@@ -1,9 +1,7 @@
 import React from 'react';
 import chroma from 'chroma-js';
-import './ScrollBar.css';
-import { brandOptions } from '../../Api/DummyData/Data';
+import { modelOptions } from '../../api/DummyData/Data';
 import Select from 'react-select';
-
 
 const colourStyles = {
   control: styles => ({ ...styles, backgroundColor: 'white' }),
@@ -29,15 +27,14 @@ const colourStyles = {
   },
   input: styles => ({ ...styles }),
   placeholder: styles => ({ ...styles }),
-  singleValue: (styles) => ({ ...styles}),
+  singleValue: (styles, { data }) => ({ ...styles }),
 };
 
 export default () => (
   <Select
-    label="Select your brand"
-    options={brandOptions}
+    label="Select your model"
+    options={modelOptions}
     styles={colourStyles}
-    placeholder="Select your brand"
+    placeholder="Select your model"
   />
 );
-

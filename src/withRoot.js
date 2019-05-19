@@ -2,7 +2,7 @@ import React from 'react';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 // A theme with custom primary and secondary color.
-import theme from './Theme/app.theme';
+import theme from './theme/app.theme';
 
 function withRoot(Component) {
   function WithRoot(props) {

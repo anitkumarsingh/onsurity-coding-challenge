@@ -1,7 +1,7 @@
 import React from 'react';
 import chroma from 'chroma-js';
 import './ScrollBar.css';
-import { openMenuOptions } from '../../Api/DummyData/Data';
+import { openMenuOptions } from '../../api/DummyData/Data';
 import Select from 'react-select';
 
 const colourStyles = {

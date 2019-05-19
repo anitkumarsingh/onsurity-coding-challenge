@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
-import NavBar from './Components/NavBar/NavBar';
-import Footer from './Components/Footer/Footer';
-import AppRoutes from 'Routes/AppRoutes';
-import styles from 'Theme/styles';
+import NavBar from './components/NavBar/NavBar';
+import Footer from './components/Footer/Footer';
+import AppRoutes from './routes/AppRoutes';
+import styles from './theme/styles';
 import withRoot from './withRoot';
 
 const AppContainer = () => (

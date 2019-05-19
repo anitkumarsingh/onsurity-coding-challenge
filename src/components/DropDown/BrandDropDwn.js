@@ -1,8 +1,9 @@
 import React from 'react';
 import chroma from 'chroma-js';
-
-import { buyTimeOptions } from '../../Api/DummyData/Data';
+import './ScrollBar.css';
+import { brandOptions } from '../../api/DummyData/Data';
 import Select from 'react-select';
+
 
 const colourStyles = {
   control: styles => ({ ...styles, backgroundColor: 'white' }),
@@ -26,16 +27,17 @@ const colourStyles = {
       },
     };
   },
-  input: styles => ({ ...styles}),
-  placeholder: styles => ({ ...styles}),
-  singleValue: (styles, { data }) => ({ ...styles}),
+  input: styles => ({ ...styles }),
+  placeholder: styles => ({ ...styles }),
+  singleValue: (styles) => ({ ...styles}),
 };
 
 export default () => (
   <Select
-    label="When did you buy it ?"
-    options={buyTimeOptions}
+    label="Select your brand"
+    options={brandOptions}
     styles={colourStyles}
-    placeholder="When did you buy it ?"
+    placeholder="Select your brand"
   />
 );
+

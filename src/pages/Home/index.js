@@ -1,8 +1,8 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import SelectCard from '../../Components/Card/Card';
-import BrandSelect from '../../Components/DropDown/OpenedMenu';
+import SelectCard from '../../components/Card/Card';
+import BrandSelect from '../../components/DropDown/OpenedMenu';
 import Button from '@material-ui/core/Button';
 // import Grid from '@material-ui/core/Grid';
 // import CardMedia from '@material-ui/core/CardMedia';
