@@ -31,14 +31,31 @@ const colourStyles = {
   singleValue: (styles) => ({ ...styles}),
 };
 
-export default () => (
-  <Select
-    // defaultValue={openMenuOptions[0]}
-    label="Select your brand"
-    options={openMenuOptions}
-    styles={colourStyles}
-    placeholder="Select your brand"
-    menuIsOpen={true}
-  />
-);
+class openMenuSelect extends React.Component{
+  state={
+    menuIsOpen:false
+  }
+  componentDidMount(){
+    this.setState({menuIsOpen:true})
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }
+  render(){
+    return(
+      <Select
+        label="Select your brand"
+        options={openMenuOptions}
+        styles={colourStyles}
+        placeholder="Select your brand"
+        menuIsOpen={this.state.menuIsOpen}
+     />
+    )
+  }
+}
+
+export default openMenuSelect;
+
 

@@ -4,8 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import SelectCard from '../../components/Card/Card';
 import BrandSelect from '../../components/DropDown/OpenedMenu';
 import Button from '@material-ui/core/Button';
-// import Grid from '@material-ui/core/Grid';
-// import CardMedia from '@material-ui/core/CardMedia';
 
 const styles = theme =>({
   headerTitle:{
@@ -162,79 +160,89 @@ const styles = theme =>({
   }
 })
 
-const Home = ({classes}) =>{
-  return(
-    <div className={classes.constainer}>
-      <div className={classes.headerContainer}>
-        <Typography component="h1" variant="h4" className={classes.headerTitle}>
-          Insurance that Works for You
-        </Typography>
-      </div>
-      <div className={classes.headerContainer}>
-        <Typography component="h6" variant="h6" className={classes.subTitle}>
-         Simple. Smart. Affordable
-        </Typography>
-      </div>
-      <div className={classes.flexContainer}>
-          <div style={{flexGrow:'5'}} className={classes.selectCard}>
-            <SelectCard/>
-          </div>
-          <div style={{flexGrow:'8'}} className={classes.imgContainer}></div>
-      </div>
-      <div className={classes.headerContainer}>
-        <Typography component="h1" variant="h4" className={classes.headerTitle}>
-          {`It's Easier than You Think`}
-        </Typography>
-      </div>
-      <div className={classes.spacer}></div>
-      <div className={classes.flexiContain}>
-         <div className={classes.brandInnerContainer}><BrandSelect/>
-            <div className={classes.tellUsDeviceText}>
-                  <Typography variant="h6" component="h6">
-                    Tell us about your device
-                   </Typography>
-              </div>
-         </div>
-         <div className={classes.centeredBtn}>
-           <div className={classes.btnInnerContainer}>
-             <Button variant="contained" color="secondary"className={classes.button}>
-               Select
-             </Button>
-              <div className={classes.personalizedTxtBox}>
+class Home extends React.Component{
+  componentDidMount(){
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }
+  render(){
+    const { classes } = this.props;
+    return(
+      <div className={classes.constainer}>
+        <div className={classes.headerContainer}>
+          <Typography component="h1" variant="h4" className={classes.headerTitle}>
+            Insurance that Works for You
+          </Typography>
+        </div>
+        <div className={classes.headerContainer}>
+          <Typography component="h6" variant="h6" className={classes.subTitle}>
+           Simple. Smart. Affordable
+          </Typography>
+        </div>
+        <div className={classes.flexContainer}>
+            <div style={{flexGrow:'5'}} className={classes.selectCard}>
+              <SelectCard/>
+            </div>
+            <div style={{flexGrow:'8'}} className={classes.imgContainer}></div>
+        </div>
+        <div className={classes.headerContainer}>
+          <Typography component="h1" variant="h4" className={classes.headerTitle}>
+            {`It's Easier than You Think`}
+          </Typography>
+        </div>
+        <div className={classes.spacer}></div>
+        <div className={classes.flexiContain}>
+           <div className={classes.brandInnerContainer}><BrandSelect/>
+              <div className={classes.tellUsDeviceText}>
                     <Typography variant="h6" component="h6">
-                      Select a personalized plan
+                      Tell us about your device
                      </Typography>
                 </div>
+           </div>
+           <div className={classes.centeredBtn}>
+             <div className={classes.btnInnerContainer}>
+               <Button variant="contained" color="secondary"className={classes.button}>
+                 Select
+               </Button>
+                <div className={classes.personalizedTxtBox}>
+                      <Typography variant="h6" component="h6">
+                        Select a personalized plan
+                       </Typography>
+                  </div>
+                </div>
+           </div>
+           <div className={classes.centeredBtn}>
+              <img
+                src="/img/InsuredGIF.png"
+                alt="Onsurity"
+                width={'auto'}
+                height={290}
+                />
+                <div className={classes.payNgetInsuredTxt}>
+                    <Typography variant="h6" component="h6">
+                     Pay and get insured instantly
+                    </Typography>
+                </div>
+           </div>
+        </div>
+        <div className={classes.secondSpacer}>1</div>
+        {/* <Grid container>
+              <Grid item xs={12} sm={12} className={classes.hideOnSmallDev}>
+                <CardMedia
+                  className={classes.ladyWithPhoneImg}
+                  image="/img/LadyWithPhone.png"
+                  title="LadyWithPhone"
+                />
+              </Grid>
+              <div className={classes.selectContent}>
+                  <SelectCard/>
               </div>
-         </div>
-         <div className={classes.centeredBtn}>
-            <img
-              src="/img/InsuredGIF.png"
-              alt="Onsurity"
-              width={'auto'}
-              height={290}
-              />
-              <div className={classes.payNgetInsuredTxt}>
-                  <Typography variant="h6" component="h6">
-                   Pay and get insured instantly
-                  </Typography>
-              </div>
-         </div>
+            </Grid> */}
       </div>
-      <div className={classes.secondSpacer}>1</div>
-      {/* <Grid container>
-            <Grid item xs={12} sm={12} className={classes.hideOnSmallDev}>
-              <CardMedia
-                className={classes.ladyWithPhoneImg}
-                image="/img/LadyWithPhone.png"
-                title="LadyWithPhone"
-              />
-            </Grid>
-            <div className={classes.selectContent}>
-                <SelectCard/>
-            </div>
-          </Grid> */}
-    </div>
-  )
+    )
+  }
 }
 export default withStyles(styles)(Home);
