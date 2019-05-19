@@ -102,10 +102,12 @@ const styles = theme =>({
   tellUsDeviceText:{
     marginTop:'260px',
     textAlign:'center',
+    fontSize:'1.2em',
   },
   personalizedTxtBox:{
     marginTop:'233px',
     textAlign:'center',
+    fontSize:'1.2em',
     [theme.breakpoints.down('sm')]: {
       marginTop:'40px',
     },
@@ -113,7 +115,8 @@ const styles = theme =>({
   payNgetInsuredTxt:{
     bottom:0,
     textAlign:'center',
-    position:'relative'
+    position:'relative',
+    fontSize:'1.2em',
   },
   secondSpacer:{
     margin:'90px 0 0px 0',
@@ -187,7 +190,7 @@ const Home = ({classes}) =>{
       <div className={classes.flexiContain}>
          <div className={classes.brandInnerContainer}><BrandSelect/>
             <div className={classes.tellUsDeviceText}>
-                  <Typography variant="subtitle1" component="h2">
+                  <Typography variant="h6" component="h6">
                     Tell us about your device
                    </Typography>
               </div>
@@ -198,7 +201,7 @@ const Home = ({classes}) =>{
                Select
              </Button>
               <div className={classes.personalizedTxtBox}>
-                    <Typography variant="subtitle1" component="h2">
+                    <Typography variant="h6" component="h6">
                       Select a personalized plan
                      </Typography>
                 </div>
@@ -212,7 +215,7 @@ const Home = ({classes}) =>{
               height={290}
               />
               <div className={classes.payNgetInsuredTxt}>
-                  <Typography variant="subtitle1" component="h2">
+                  <Typography variant="h6" component="h6">
                    Pay and get insured instantly
                   </Typography>
               </div>
