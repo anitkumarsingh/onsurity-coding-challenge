@@ -4,8 +4,8 @@ import { withStyles } from '@material-ui/core/styles';
 import SelectCard from '../../Components/Card/Card';
 import BrandSelect from '../../Components/DropDown/OpenedMenu';
 import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
-import CardMedia from '@material-ui/core/CardMedia';
+// import Grid from '@material-ui/core/Grid';
+// import CardMedia from '@material-ui/core/CardMedia';
 
 const styles = theme =>({
   headerTitle:{
@@ -14,17 +14,26 @@ const styles = theme =>({
     padding:'2.2em 0 0.4em 0',
   },
   subTitle:{
-    fontSize:'1em',
+    fontSize:'1.2em',
     textAlign:'center',
-    padding:'1em 0 3em 0'
+    padding:'0.4em 0 3em 0'
   },
   imgContainer:{
-    height: '590px',
+    height: '573px',
     background:'url("/img/LadyWithPhone.png")',
     backgroundSize: 'cover',
-    backgroundPosition:'top right ',
+    backgroundPosition:'100% right ',
     backgroundRepeat:'no-repeat',
-
+    [theme.breakpoints.down('sm')]: {
+      backgroundSize: 'cover',
+      backgroundPosition:'center center ',
+      height:390,
+     },
+     [theme.breakpoints.down('xs')]: {
+      backgroundSize: 'cover',
+      backgroundPosition:'center center ',
+      height:300
+     },
   },
   constainer:{background:'white'},
   media:{
@@ -59,7 +68,7 @@ const styles = theme =>({
       width: '300px',
       // marginBottom: '10px',
       // height:'300px'
-    }
+    },
   },
   centeredBtn: {
     textAlign: 'center',
@@ -81,22 +90,6 @@ const styles = theme =>({
       border:'2px solid #f04336',
       fontWeight:500
     },
-  },
-  row:{
-    display:'flex',
-    '&&:after':{
-      content:'',
-      display:'table',
-      clear:'both'
-    }
-  },
-  box:{
-    height : '200px',
-    color : 'white',
-    float: 'left',
-    width: '33.33%',
-    padding: '15px',
-    textAlign:'center'
   },
   spacer:{
     margin:'90px 0 90px 0'
@@ -159,7 +152,6 @@ const styles = theme =>({
       marginBottom:'90px',
      },
   }
-
 })
 
 const Home = ({classes}) =>{
@@ -222,18 +214,7 @@ const Home = ({classes}) =>{
          </div>
       </div>
       <div className={classes.secondSpacer}>1</div>
-      {/* <div className={classes.row}>
-         <div className={classes.box}>
-            <Typography variant="subtitle1" component="h2">Tell us about your device</Typography>
-         </div>
-         <div className={classes.box}>
-            <Typography variant="subtitle1" component="h2">Select a personalized plan</Typography>
-         </div>
-         <div className={classes.box}>
-            <Typography variant="subtitle1" component="h2">Pay and get insured instantly</Typography>
-         </div>
-      </div> */}
-      <Grid container>
+      {/* <Grid container>
             <Grid item xs={12} sm={12} className={classes.hideOnSmallDev}>
               <CardMedia
                 className={classes.ladyWithPhoneImg}
@@ -244,7 +225,7 @@ const Home = ({classes}) =>{
             <div className={classes.selectContent}>
                 <SelectCard/>
             </div>
-          </Grid>
+          </Grid> */}
     </div>
   )
 }

@@ -37,14 +37,6 @@ const styles = theme=>({
     fontSize:'1em',
     backgroundImage: 'linear-gradient(to right top, #f04336, #f04336, #f04336, #f04336, #f04336)'
   },
-  // ctaBtn:{
-  //   display: 'flex',
-  //   justifyContent:'center',
-  //   alignItems:'center',
-  //   '&&>Button':{
-
-  //   }
-  // },
   centered: {
     display: 'flex',
     justifyContent: 'center',
