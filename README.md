@@ -4,7 +4,7 @@
 A website using react, front end coding challenge.
 
 #### Screenshot 
-![](Screenshot/Screenshot_2019-05-19%20Onsurity%20Coding%20Challenge.png)
+![](screenshot/Screenshot_2019-05-19%20Onsurity%20Coding%20Challenge.png)
 
 ## Install
 Install all required depencencies by following command
