@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "author": "Anit Kumar",
-  "homepage": "https://anitkumarsingh.github.io/onsurity-coding-challenge/",
+  "homepage": "https://onsurity-coding-anit.netlify.com/",
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "^3.0.2",
