@@ -138,7 +138,7 @@ class NavBar extends React.Component {
               <img
                 src="/icons/logo.png"
                 alt="Onsurity"
-                width={110}
+                width={115}
                 height={50}
                 />
               </Link>

@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import SelectCard from '../../Components/Card/Card';
-import BrandSelect from '../../Components/DropDown/BrandDropDwn';
+import BrandSelect from '../../Components/DropDown/OpenedMenu';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -70,7 +70,17 @@ const styles = theme =>({
     boxShadow: '12px 2px 22px 12px rgba(225, 0, 0, 0.1)',
     padding:'10px 30px 10px 30px',
     fontSize:'1em',
-    backgroundImage: 'linear-gradient(to right top, #f04336, #f04336, #f04336, #f04336, #f04336)'
+    // backgroundImage: 'linear-gradient(to right top, #f04336, #f04336, #f04336, #f04336, #f04336)',
+    '&:hover': {
+      '@media (hover: none)': {
+        backgroundColor: theme.palette.primary.main,
+      },
+    },
+    '&:focus': {
+      backgroundColor: 'rgba(225, 0, 0, 0.1)',
+      border:'2px solid #f04336',
+      fontWeight:500
+    },
   },
   row:{
     display:'flex',
@@ -94,9 +104,6 @@ const styles = theme =>({
   tellUsDeviceText:{
     marginTop:'260px',
     textAlign:'center',
-    [theme.breakpoints.down('sm')]: {
-      marginTop:'60px',
-    },
   },
   personalizedTxtBox:{
     marginTop:'233px',
@@ -141,6 +148,16 @@ const styles = theme =>({
   },
   headerContainer:{
    padding:'0 10px 0 10px'
+  },
+  brandInnerContainer:{
+    [theme.breakpoints.down('sm')]: {
+     marginBottom:'90px',
+    },
+  },
+  btnInnerContainer:{
+    [theme.breakpoints.down('sm')]: {
+      marginBottom:'90px',
+     },
   }
 
 })
@@ -171,7 +188,7 @@ const Home = ({classes}) =>{
       </div>
       <div className={classes.spacer}></div>
       <div className={classes.flexiContain}>
-         <div><BrandSelect/>
+         <div className={classes.brandInnerContainer}><BrandSelect/>
             <div className={classes.tellUsDeviceText}>
                   <Typography variant="subtitle1" component="h2">
                     Tell us about your device
@@ -179,6 +196,7 @@ const Home = ({classes}) =>{
               </div>
          </div>
          <div className={classes.centeredBtn}>
+           <div className={classes.btnInnerContainer}>
              <Button variant="contained" color="secondary"className={classes.button}>
                Select
              </Button>
@@ -187,6 +205,7 @@ const Home = ({classes}) =>{
                       Select a personalized plan
                      </Typography>
                 </div>
+              </div>
          </div>
          <div className={classes.centeredBtn}>
             <img
@@ -219,7 +238,7 @@ const Home = ({classes}) =>{
               <CardMedia
                 className={classes.ladyWithPhoneImg}
                 image="/img/LadyWithPhone.png"
-                title="about us"
+                title="LadyWithPhone"
               />
             </Grid>
             <div className={classes.selectContent}>

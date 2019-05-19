@@ -36,3 +36,13 @@ export const buyTimeOptions = [
   { value: 'Oct 2005', label: 'Oct 2005', color: '#FF5630' },
 ];
 
+export const openMenuOptions = [
+  { value: 'Apple', label: 'Apple', color: '#FF5630', isFixed: true },
+  { value: 'Mi', label: 'Mi', color: '#FF5630', disabled: true },
+  { value: 'Lenovo', label: 'Lenovo', color: '#FF5630' },
+  { value: 'HTC', label: 'HTC', color: '#FF5630', isFixed: true },
+  { value: 'Samsung', label: 'Samsung', color: '#FF5630' },
+  { value: 'Nokia', label: 'Nokia', color: '#FF5630' },
+  { value: 'OnePLus', label: 'OnePLus', color: '#FF5630' },
+
+];
