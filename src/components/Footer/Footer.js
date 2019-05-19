@@ -68,7 +68,6 @@ const Title = ({ children }) => (
 const ItemText = ({ children, className }) => (
   <Typography
     className={classNames(className, 'inline', 'text-light')}
-    // variant="caption"
     variant="subtitle2" component="p"
   >
     {children}
@@ -89,7 +88,7 @@ const ListItemTextLight = ({ children }) => (
 const GetInTouch = ({ className }) => (
   <div className={className}>
     <Title>Contact</Title>
-    <address className="flex sm-flex-col">
+    <address className="sm-flex-col">
       <div className="basis-50 sm-my-1">
         <MailIcon
           className="align-middle mr-2"
@@ -100,7 +99,7 @@ const GetInTouch = ({ className }) => (
           <a href="mailto:info@onsurity.com">info@onsurity.com</a>
         </ItemText>
       </div>
-      <div className="basis-50">
+      <div className="basis-50 ">
         <PhoneIcon
           className="align-middle mr-2"
           color="primary"
@@ -231,7 +230,7 @@ const Legal = ({ classes }) => (
       align="center"
       variant="body2"
     >
-      All Rights Reserved.{year}
+      All Rights Reserved,{year}
     </Typography>
   </div>
 );
