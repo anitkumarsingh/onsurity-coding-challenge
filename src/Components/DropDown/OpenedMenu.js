@@ -4,7 +4,6 @@ import './ScrollBar.css';
 import { openMenuOptions } from '../../Api/DummyData/Data';
 import Select from 'react-select';
 
-
 const colourStyles = {
   control: styles => ({ ...styles, backgroundColor: 'white' }),
   option: (styles, { data, isDisabled, isFocused, isSelected }) => {
