@@ -26,7 +26,7 @@ const styles = theme =>({
     backgroundRepeat:'no-repeat',
     [theme.breakpoints.down('sm')]: {
       backgroundSize: 'cover',
-      backgroundPosition:'center center ',
+      backgroundPosition:'bottom center ',
       height:390,
      },
      [theme.breakpoints.down('xs')]: {
@@ -34,6 +34,11 @@ const styles = theme =>({
       backgroundPosition:'center center ',
       height:300
      },
+     [theme.breakpoints.only('597px')]: {
+      backgroundSize: 'cover',
+      backgroundPosition:'center center ',
+      height:400
+    },
   },
   constainer:{background:'white'},
   media:{
